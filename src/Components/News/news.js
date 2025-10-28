@@ -28,10 +28,19 @@ const News = () => {
         <div className="news-wrapper">
           {news.map((item, url) => (
             <article key={url} className="news-item">
-              <a href={item.url} target="_blank" className="news-link">
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noreferrer"
+                className="news-link"
+              >
                 <h3>{item.title}</h3>
 
-                <img src={item.urlToImage} className="news-img"></img>
+                <img
+                  src={item.urlToImage}
+                  alt={news.title || "News image"}
+                  className="news-img"
+                ></img>
                 <p className="description">{item.description}</p>
                 <span>{item.source.name}</span>
               </a>
