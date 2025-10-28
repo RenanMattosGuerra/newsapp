@@ -6,11 +6,12 @@ import "./mediaquery.css";
 import Title from "../Title/title";
 
 const News = () => {
-  const apiKey = process.env.REACT_APP_API_KEY;
   const [news, setNews] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
+    const apiKey = process.env.REACT_APP_API_KEY;
+
     async function FetchData() {
       const { data } = await axios.get(
         `https://newsapi.org/v2/top-headlines?category=${id}&apiKey=${apiKey}`

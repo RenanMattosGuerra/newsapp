@@ -4,10 +4,11 @@ import axios from "axios";
 import "../../Components/News/news.css";
 
 const Home = () => {
-  const apiKey = process.env.REACT_APP_API_KEY;
   const [headlines, setHeadlines] = useState([]);
 
   useEffect(() => {
+    const apiKey = process.env.REACT_APP_API_KEY;
+
     async function FetchData() {
       const { data } = await axios.get(
         `https://newsapi.org/v2/top-headlines?language=en&apiKey=${apiKey}`
