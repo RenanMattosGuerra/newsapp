@@ -1,0 +1,19 @@
+footer {
+  margin-top: var(--space-md);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: var(--space-md);
+  background: linear-gradient(
+    to bottom,
+    var(--light-for-gradient),
+    var(--bg-dark)
+  );
+}
+
+footer > p {
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 400;
+}

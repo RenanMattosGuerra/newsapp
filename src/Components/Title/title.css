@@ -1,0 +1,6 @@
+.category-heading {
+  padding-top: var(--space-md);
+  padding-bottom: var(--space-md);
+  color: var(--text);
+  font-size: 24px;
+}
