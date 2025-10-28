@@ -10,14 +10,14 @@ const News = () => {
   const [news, setNews] = useState([]);
   const { id } = useParams();
 
-  async function FetchData() {
-    const { data } = await axios.get(
-      `https://newsapi.org/v2/top-headlines?category=${id}&apiKey=${apiKey}`
-    );
-    setNews(data.articles);
-  }
-
   useEffect(() => {
+    async function FetchData() {
+      const { data } = await axios.get(
+        `https://newsapi.org/v2/top-headlines?category=${id}&apiKey=${apiKey}`
+      );
+      setNews(data.articles);
+    }
+
     FetchData();
   }, [id]);
 

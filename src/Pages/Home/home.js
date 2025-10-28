@@ -7,17 +7,17 @@ const Home = () => {
   const apiKey = process.env.REACT_APP_API_KEY;
   const [headlines, setHeadlines] = useState([]);
 
-  async function FetchData() {
-    const { data } = await axios.get(
-      `https://newsapi.org/v2/top-headlines?language=en&apiKey=${apiKey}`
-    );
-
-    setHeadlines(data.articles);
-  }
-
   useEffect(() => {
+    async function FetchData() {
+      const { data } = await axios.get(
+        `https://newsapi.org/v2/top-headlines?language=en&apiKey=${apiKey}`
+      );
+
+      setHeadlines(data.articles);
+    }
+
     FetchData();
-  }, [FetchData]);
+  }, []);
 
   return (
     <section>
