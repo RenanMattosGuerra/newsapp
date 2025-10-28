@@ -20,21 +20,30 @@ const Home = () => {
   }, [FetchData]);
 
   return (
-    <div>
+    <section>
       <h2 className="home-heading">Home</h2>
       <div className="news-container">
         {headlines.length > 0 ? (
           <div className="news-wrapper">
             {headlines.map((item, index) => (
-              <div key={index} className="news-item">
-                <a href={item.url} target="_blank" className="news-link">
+              <article key={index} className="news-item">
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="news-link"
+                >
                   <h3>{item.title}</h3>
 
-                  <img src={item.urlToImage} className="news-img"></img>
+                  <img
+                    src={item.urlToImage}
+                    alt={item.title || "News image"}
+                    className="news-img"
+                  ></img>
                   <p className="description">{item.description}</p>
                   <span>{item.source.name}</span>
                 </a>
-              </div>
+              </article>
             ))}
           </div>
         ) : (
@@ -44,7 +53,7 @@ const Home = () => {
           </div>
         )}
       </div>
-    </div>
+    </section>
   );
 };
 

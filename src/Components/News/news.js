@@ -38,7 +38,7 @@ const News = () => {
 
                 <img
                   src={item.urlToImage}
-                  alt={news.title || "News image"}
+                  alt={item.title || "News image"}
                   className="news-img"
                 ></img>
                 <p className="description">{item.description}</p>
